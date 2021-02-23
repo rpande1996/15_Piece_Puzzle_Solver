@@ -147,7 +147,7 @@ visited = []
 
 # While loop to iterate the values inside the array with legal moves.
 # If the current state is same as the goal state then the loop breaks.
-# If not then it checks the value in the visited list, and if the value is same, then it continues
+# If the state ID is found in the visited list, then the node is skipped
 
 while True:
     try:
