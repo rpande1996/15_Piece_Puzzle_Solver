@@ -6,4 +6,12 @@ Steps:
 3. Uncomment the test case you want to run
 4. Uncomment the write text file corresponding to the test case
 5. Default has been set for Test Case 1
-6. PyCharm IDE is recommended
+
+# Libraries installed
+
+1. Numpy
+
+# Software Recommended
+
+1. PyCharm as IDE
+2. Python 3.7
