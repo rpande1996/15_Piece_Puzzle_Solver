@@ -73,6 +73,9 @@ python 15_Piece_Puzzle_Solver.py
 ```
 Enter the following parameters:-
 ```
-Enter input state
+Enter input state:
 ```
-Note: The test case numbers are given in "Overview"
+For visualization, run:
+```
+python visualization.py
+```
