@@ -5,9 +5,15 @@
 
 This code utilizes BFS goal detection algorithm to solve a 15 piece puzzle with a user-inputted initial state
 For example:
-  The ideal/goal state would be: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
+  The ideal/goal state would be: 
+  
+  ```
+  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
+  ```
+  
   Which would be represented as follows:
-  ![Image](/media/visualization/Puzzle.png)
+  
+  <img src="https://github.com/rpande1996/15_Piece_Puzzle_Solver/blob/main/media/visualization/Puzzle.png" width="720" height="720"/>
 
 ## Softwares
 
