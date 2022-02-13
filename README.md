@@ -3,17 +3,11 @@
 ---
 ## Overview
 
-This code utilizes BFS goal detection algorithm to solve a 15 piece puzzle from given test cases;
-
-```
-1. [[1, 2, 3, 4], [5, 6, 0, 8], [9, 10, 7, 12], [13, 14, 11, 15]]
-2. [[1, 0, 3, 4], [5, 2, 7, 8], [9, 6, 10, 11], [13, 14, 15, 12]]
-3. [[0, 2, 3, 4], [1, 5, 7, 8], [9, 6, 11, 12], [13, 10, 14, 15]]
-4. [[5, 1, 2, 3], [0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]]
-5. [[1, 6, 2, 3], [9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]
-```
-
-Note: The elements are stored column-wise
+This code utilizes BFS goal detection algorithm to solve a 15 piece puzzle with a user-inputted initial state
+For example:
+  The ideal/goal state would be: 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 0
+  Which would be represented as follows:
+  ![Image](/media/visualization/Puzzle.png)
 
 ## Softwares
 
@@ -52,6 +46,18 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE 
 SOFTWARE.
 ```
+## Demo
+
+Following demo is for following test case:
+
+```
+Enter input state: 5 1 2 3 6 7 11 4 13 9 10 8 14 15 0 12
+```
+15 Piece Puzzle Solver:
+
+![GIF](/media/gif/Vis.gif)
+
+
 ## Build
 
 ```
@@ -61,6 +67,6 @@ python 15_Piece_Puzzle_Solver.py
 ```
 Enter the following parameters:-
 ```
-Select test case:
+Enter input state
 ```
 Note: The test case numbers are given in "Overview"
