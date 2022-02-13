@@ -73,7 +73,7 @@ git clone https://github.com/rpande1996/15_Piece_Puzzle_Solver
 cd 15_Piece_Puzzle_Solver/src
 python 15_Piece_Puzzle_Solver.py
 ```
-Enter the following parameters:-
+Enter the following parameters (Order would be row-wise) :-
 ```
 Enter input state:
 ```
