@@ -13,7 +13,7 @@ For example:
   
   Which would be represented as follows:
   
-  <img src="https://github.com/rpande1996/15_Piece_Puzzle_Solver/blob/main/media/visualization/Puzzle.png" width="720" height="720"/>
+  <img src="https://github.com/rpande1996/15_Piece_Puzzle_Solver/blob/main/media/visualization/Puzzle.png" width="480" height="480"/>
 
 ## Softwares
 
@@ -61,7 +61,7 @@ Enter input state: 5 1 2 3 6 7 11 4 13 9 10 8 14 15 0 12
 ```
 15 Piece Puzzle Solver:
 
-![GIF](/media/gif/Vis.gif)
+<img src="https://github.com/rpande1996/15_Piece_Puzzle_Solver/blob/main/media/gif/Vis.gif" width="480" height="480"/>
 
 
 ## Build
