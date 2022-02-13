@@ -1,10 +1,13 @@
 import numpy as np
 
+start = time.time()
+
+
 # Creating a class to determine the node of the iteration. Node is the puzzle state.
 
 class Node:
 
-# Defining the __init__ function
+    # Defining the __init__ function
 
     def __init__(self, data, parent, act, cost):
         self.data = data
@@ -13,7 +16,7 @@ class Node:
         self.id = self.get_id()
         self.cost = cost
 
-# Defining the __repr__ function
+    # Defining the __repr__ function
 
     def __repr__(self):
 
@@ -26,7 +29,7 @@ class Node:
 
         str_repr = sep_str
 
-# Creating a for loop to return the value in proper format
+        # Creating a for loop to return the value in proper format
 
         for i in range(0, row_count):
             row_repr = ""
@@ -42,7 +45,7 @@ class Node:
 
         return str_repr
 
-# Defining a function to generate a unique id of the state of the puzzle.
+    # Defining a function to generate a unique id of the state of the puzzle.
 
     def get_id(self):
         _id = np.ravel(self.data).tolist()
@@ -50,6 +53,7 @@ class Node:
         _id = "-".join(_id)
         self.id = _id
         return self.id
+
 
 # Creating a class to convert a list into a queue
 
@@ -69,6 +73,7 @@ class Queue:
     def __len__(self):
         return len(self.queue)
 
+
 # Move operations are done by checking the index value of the '0' element and checking the possible legal moves
 
 # Defining a move function to move the blank value up
@@ -82,6 +87,7 @@ def move_up(data):
         data[i], data[i - 4] = data[i - 4], data[i]
     return data.copy()
 
+
 # Defining a move function to move the blank value left
 # When a 4x4 array is converted into a list, the index value of the leftmost row becomes 0, 4, 8 and 12
 
@@ -92,6 +98,7 @@ def move_left(data):
     else:
         data[i], data[i - 1] = data[i - 1], data[i]
     return data.copy()
+
 
 # Defining a move function to move the blank value down
 # When a 4x4 array is converted into a list, the index value of the bottommost row becomes 12, 13, 14 and 15
@@ -104,6 +111,7 @@ def move_down(data):
         data[i], data[i + 4] = data[i + 4], data[i]
     return data.copy()
 
+
 # Defining a function to move the blank value right
 # When a 4x4 array is converted into a list, the index value of the rightmost row becomes 3, 7, 11 and 15
 
@@ -114,6 +122,7 @@ def move_right(data):
     else:
         data[i], data[i + 1] = data[i + 1], data[i]
     return data.copy()
+
 
 # Defining a function to generate new legal moves as per the state
 
@@ -127,29 +136,31 @@ def generate_new_moves(state):
     return list_states
 
 
+def create_puzzle(inp):
+    new_list = []
+    init_list = []
+    lis = inp.split()
+    for i in lis:
+        i = int(i)
+        new_list.append(i)
+    ideal_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    check_list = new_list.copy()
+    check_list.sort()
+    if check_list == ideal_list:
+        init_list = new_list
+    else:
+        print("Re-enter correct values")
+        exit(0)
+
+    init_state = np.reshape(np.asarray(init_list), (4, 4))
+    #
+    return init_state
+
+
 goal_state = np.asarray([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]])
 
-test_case = int(input("Select test case: "))
-
-if test_case == 1:
-    init_state = [[1, 2, 3, 4], [5, 6, 0, 8], [9, 10, 7, 12], [13, 14, 11, 15]]  # Test Case 1
-elif test_case == 2:
-    init_state = [[1, 0, 3, 4], [5, 2, 7, 8], [9, 6, 10, 11], [13, 14, 15, 12]]  # Test Case 2
-elif test_case == 3:
-    init_state = [[0, 2, 3, 4], [1, 5, 7, 8], [9, 6, 11, 12], [13, 10, 14, 15]]  # Test Case 3
-elif test_case == 4:
-    init_state = [[5, 1, 2, 3], [0, 6, 7, 4], [9, 10, 11, 8], [13, 14, 15, 12]]  # Test Case 4
-elif test_case == 5:
-    init_state = [[1, 6, 2, 3], [9, 5, 7, 4], [0, 10, 11, 8], [13, 14, 15, 12]]  # Test Case 5
-else:
-    print("Invalid input")
-    exit(0)
-
-# Please uncomment the respective test case
-
-# Reshaping the input into a 4x4 array
-
-init_state = np.reshape(np.asarray(init_state), (4, 4))
+input_list = str(input("Enter input state: "))
+init_state = create_puzzle(input_list)
 state_queue = Queue()
 state_queue.add(Node(init_state, None, None, None))
 
@@ -158,7 +169,6 @@ visited = []
 # While loop to iterate the values inside the array with legal moves.
 # If the current state is same as the goal state then the loop breaks.
 # If the state ID is found in the visited list, then the node is skipped
-
 while True:
     try:
         cur_node = state_queue.pop()
@@ -190,7 +200,7 @@ path.reverse()
 
 # Writing a text file to store the path
 
-filename = f"../output/nodePath_testcase{test_case}.txt"
+filename = "../output/nodePath_testcase.txt"
 with open(filename, "w+") as sol_file:
     for node in path:
         str_node = np.ravel(node.data, order="F").tolist()
