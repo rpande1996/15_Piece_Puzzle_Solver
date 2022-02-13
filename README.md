@@ -22,6 +22,8 @@ For example:
 ## Libraries
 
 * Numpy 1.21.2
+* OpenCV 3.4.8.29
+* MoviePy 1.0.3
 
 ## Programming Languages
 
