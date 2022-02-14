@@ -60,7 +60,7 @@ SOFTWARE.
 Following demo is for following test case:
 
 ```
-Enter input state: 5 1 2 3 6 7 11 4 13 9 10 8 14 15 0 12
+Enter input state: 5 1 7 3 9 2 11 4 13 6 15 8 0 10 14 12
 ```
 [15 Piece Puzzle Solver: ](https://youtu.be/huRGa8ODMVQ)
 
