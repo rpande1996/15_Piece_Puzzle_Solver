@@ -1,7 +1,5 @@
 import numpy as np
 
-start = time.time()
-
 
 # Creating a class to determine the node of the iteration. Node is the puzzle state.
 
